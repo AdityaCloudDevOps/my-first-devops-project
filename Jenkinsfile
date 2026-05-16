@@ -3,21 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building Application'
+                sh 'docker build -t my-nginx-app .'
             }
         }
 
-        stage('Test') {
+        stage('Remove Old Container') {
             steps {
-                echo 'Running Tests'
+                sh 'docker rm -f mycontainer || true'
             }
         }
 
-        stage('Deploy') {
+        stage('Run Docker Container') {
             steps {
-                echo 'Deploying Application'
+                sh 'docker run -d -p 8085:80 --name mycontainer my-nginx-app'
             }
         }
 
