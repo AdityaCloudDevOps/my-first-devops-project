@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LinkedIn Aesthetic Homepage</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -18,49 +19,56 @@
 
     body{
       background:#f3f2ef;
-      color:#222;
+      color:#1d2226;
+      overflow-x:hidden;
     }
 
-    /* NAVBAR */
+    a{
+      text-decoration:none;
+    }
+
+    /* ================= NAVBAR ================= */
+
     .navbar{
       width:100%;
       background:#fff;
+      padding:15px 7%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:14px 8%;
       position:sticky;
       top:0;
-      z-index:1000;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      z-index:999;
+      box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:15px;
     }
 
     .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .logo-box{
-      width:38px;
-      height:38px;
+      width:42px;
+      height:42px;
       background:#0a66c2;
-      color:#fff;
+      border-radius:10px;
       display:flex;
-      align-items:center;
       justify-content:center;
-      font-weight:700;
-      border-radius:8px;
+      align-items:center;
+      color:#fff;
       font-size:22px;
+      font-weight:700;
     }
 
     .search-box{
+      width:320px;
       background:#eef3f8;
-      padding:10px 15px;
-      border-radius:30px;
-      width:300px;
       border:none;
       outline:none;
+      padding:12px 20px;
+      border-radius:30px;
+      font-size:14px;
     }
 
     .nav-links{
@@ -79,45 +87,52 @@
       color:#0a66c2;
     }
 
-    /* HERO SECTION */
+    /* ================= HERO ================= */
+
     .hero{
+      padding:80px 7%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:70px 8%;
-      gap:50px;
-      min-height:90vh;
+      gap:60px;
+      min-height:100vh;
     }
 
-    .hero-text{
+    .hero-left{
       flex:1;
     }
 
-    .hero-text h1{
-      font-size:58px;
+    .hero-left h1{
+      font-size:68px;
       line-height:1.1;
-      margin-bottom:20px;
-      color:#1d2226;
+      margin-bottom:25px;
+      font-weight:800;
     }
 
-    .hero-text p{
+    .hero-left span{
+      color:#0a66c2;
+    }
+
+    .hero-left p{
+      color:#555;
       font-size:18px;
-      color:#666;
+      line-height:1.8;
       margin-bottom:35px;
-      max-width:600px;
+      max-width:650px;
     }
 
     .hero-buttons{
       display:flex;
-      gap:15px;
+      gap:18px;
+      margin-bottom:45px;
     }
 
     .btn-primary{
-      padding:14px 28px;
-      border:none;
-      border-radius:30px;
+      padding:15px 35px;
       background:#0a66c2;
+      border:none;
       color:#fff;
+      border-radius:35px;
       font-size:16px;
       cursor:pointer;
       transition:0.3s;
@@ -125,14 +140,15 @@
 
     .btn-primary:hover{
       background:#004182;
+      transform:translateY(-3px);
     }
 
     .btn-secondary{
-      padding:14px 28px;
+      padding:15px 35px;
       border:2px solid #0a66c2;
-      border-radius:30px;
       background:transparent;
       color:#0a66c2;
+      border-radius:35px;
       font-size:16px;
       cursor:pointer;
       transition:0.3s;
@@ -143,123 +159,273 @@
       color:#fff;
     }
 
-    /* HERO IMAGE */
-    .hero-image{
+    .hero-stats{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .stat{
+      background:#fff;
+      padding:22px;
+      border-radius:18px;
+      min-width:160px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .stat h2{
+      color:#0a66c2;
+      margin-bottom:5px;
+    }
+
+    .hero-right{
       flex:1;
+      position:relative;
       display:flex;
       justify-content:center;
+      align-items:center;
     }
 
-    .card{
+    .main-card{
       width:420px;
       background:#fff;
-      border-radius:25px;
+      border-radius:30px;
       padding:30px;
       box-shadow:0 20px 50px rgba(0,0,0,0.08);
+      position:relative;
+      z-index:10;
     }
 
-    .profile{
+    .profile-top{
       display:flex;
       align-items:center;
-      gap:15px;
+      gap:18px;
       margin-bottom:25px;
     }
 
-    .profile img{
-      width:65px;
-      height:65px;
+    .profile-top img{
+      width:80px;
+      height:80px;
       border-radius:50%;
       object-fit:cover;
     }
 
-    .profile-info h3{
-      font-size:20px;
+    .profile-top h3{
+      font-size:22px;
     }
 
-    .profile-info p{
+    .profile-top p{
       color:#777;
       font-size:14px;
     }
 
-    .stats{
-      display:flex;
-      justify-content:space-between;
-      margin-top:20px;
+    .mini-gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:25px;
     }
 
-    .stat-box{
-      background:#f5f7fa;
-      padding:18px;
+    .mini-gallery img{
+      width:100%;
+      height:90px;
+      object-fit:cover;
+      border-radius:14px;
+    }
+
+    .floating-card{
+      position:absolute;
+      background:#fff;
+      padding:15px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      width:220px;
+    }
+
+    .floating-card img{
+      width:100%;
       border-radius:15px;
-      width:30%;
-      text-align:center;
+      margin-bottom:10px;
     }
 
-    .stat-box h2{
-      color:#0a66c2;
+    .floating-1{
+      top:-20px;
+      left:0;
     }
 
-    /* FEATURE SECTION */
+    .floating-2{
+      bottom:-20px;
+      right:0;
+    }
+
+    /* ================= FEATURES ================= */
+
     .features{
-      padding:80px 8%;
+      padding:100px 7%;
       text-align:center;
     }
 
     .features h2{
-      font-size:42px;
+      font-size:48px;
       margin-bottom:15px;
     }
 
     .features p{
       color:#666;
-      margin-bottom:50px;
+      margin-bottom:60px;
+      font-size:18px;
     }
 
     .feature-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:30px;
     }
 
     .feature-card{
       background:#fff;
+      border-radius:25px;
       padding:35px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.05);
-      transition:0.3s;
+      text-align:left;
+      box-shadow:0 15px 35px rgba(0,0,0,0.05);
+      transition:0.4s;
     }
 
     .feature-card:hover{
       transform:translateY(-10px);
     }
 
+    .feature-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:18px;
+      margin-bottom:20px;
+    }
+
     .feature-card h3{
-      margin:20px 0 10px;
+      margin-bottom:15px;
+      font-size:24px;
     }
 
     .feature-card p{
-      font-size:14px;
-      color:#777;
+      font-size:15px;
+      line-height:1.8;
+      color:#666;
+      margin-bottom:0;
     }
 
-    /* FOOTER */
+    /* ================= TESTIMONIALS ================= */
+
+    .testimonials{
+      padding:100px 7%;
+      background:#fff;
+    }
+
+    .testimonials h2{
+      text-align:center;
+      font-size:46px;
+      margin-bottom:60px;
+    }
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .testimonial{
+      background:#f8f9fb;
+      padding:30px;
+      border-radius:25px;
+    }
+
+    .testimonial-top{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:20px;
+    }
+
+    .testimonial-top img{
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .testimonial p{
+      color:#555;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+      padding:120px 7%;
+      text-align:center;
+      background:linear-gradient(135deg,#0a66c2,#004182);
+      color:#fff;
+    }
+
+    .cta h2{
+      font-size:54px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:750px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    .cta button{
+      padding:16px 40px;
+      border:none;
+      border-radius:40px;
+      background:#fff;
+      color:#0a66c2;
+      font-size:17px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    /* ================= FOOTER ================= */
+
     footer{
       background:#fff;
-      padding:25px;
+      padding:30px;
       text-align:center;
       color:#777;
-      margin-top:50px;
+      font-size:15px;
     }
 
-    @media(max-width:900px){
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:950px){
 
       .hero{
         flex-direction:column;
         text-align:center;
       }
 
+      .hero-left h1{
+        font-size:48px;
+      }
+
       .hero-buttons{
         justify-content:center;
+      }
+
+      .hero-stats{
+        justify-content:center;
+      }
+
+      .floating-card{
+        display:none;
       }
 
       .navbar{
@@ -269,92 +435,131 @@
 
       .nav-links{
         gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
       .search-box{
         width:100%;
       }
 
-      .hero-text h1{
-        font-size:42px;
-      }
-
-      .card{
+      .main-card{
         width:100%;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
+
   <nav class="navbar">
 
-    <div class="logo">
-      <div class="logo-box">in</div>
-      <input type="text" class="search-box" placeholder="Search..." />
+    <div class="nav-left">
+      <div class="logo">in</div>
+
+      <input
+        type="text"
+        class="search-box"
+        placeholder="Search jobs, people, companies..."
+      />
     </div>
 
     <ul class="nav-links">
       <li>Home</li>
-      <li>Network</li>
+      <li>My Network</li>
       <li>Jobs</li>
-      <li>Messages</li>
+      <li>Messaging</li>
       <li>Notifications</li>
+      <li>Profile</li>
     </ul>
 
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
+
   <section class="hero">
 
-    <div class="hero-text">
-      <h1>Connect. Grow. Succeed.</h1>
+    <div class="hero-left">
+
+      <h1>
+        Build Your <span>Professional</span> Future Online
+      </h1>
 
       <p>
-        Build your professional identity, connect with industry leaders,
-        and discover opportunities with a clean modern LinkedIn-inspired design.
+        Connect with talented professionals, discover exciting opportunities,
+        share your achievements, and create a powerful personal brand using
+        this modern LinkedIn-inspired homepage design.
       </p>
 
       <div class="hero-buttons">
-        <button class="btn-primary">Join Now</button>
-        <button class="btn-secondary">Explore</button>
+        <button class="btn-primary">Get Started</button>
+        <button class="btn-secondary">Learn More</button>
       </div>
+
+      <div class="hero-stats">
+
+        <div class="stat">
+          <h2>950M+</h2>
+          <p>Professionals</p>
+        </div>
+
+        <div class="stat">
+          <h2>180+</h2>
+          <p>Countries</p>
+        </div>
+
+        <div class="stat">
+          <h2>60M+</h2>
+          <p>Companies</p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="hero-image">
+    <div class="hero-right">
 
-      <div class="card">
+      <div class="floating-card floating-1">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h4>Creative Leadership</h4>
+        <p>Top design teams are hiring globally.</p>
+      </div>
 
-        <div class="profile">
-          <img src="https://i.pravatar.cc/150?img=12" alt="profile">
+      <div class="main-card">
 
-          <div class="profile-info">
-            <h3>Sarah Johnson</h3>
-            <p>UI/UX Designer at Creative Studio</p>
+        <div class="profile-top">
+
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <div>
+            <h3>Michael Carter</h3>
+            <p>Senior Product Designer at Google</p>
+            <p>New York, United States</p>
           </div>
+
         </div>
 
         <hr>
 
-        <div class="stats">
-          <div class="stat-box">
-            <h2>1.2K</h2>
-            <p>Connections</p>
-          </div>
+        <div class="mini-gallery">
 
-          <div class="stat-box">
-            <h2>240</h2>
-            <p>Posts</p>
-          </div>
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="">
 
-          <div class="stat-box">
-            <h2>98%</h2>
-            <p>Profile Score</p>
-          </div>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="">
+
         </div>
 
+      </div>
+
+      <div class="floating-card floating-2">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="">
+        <h4>Career Growth</h4>
+        <p>Thousands of companies recruit every day.</p>
       </div>
 
     </div>
@@ -362,38 +567,147 @@
   </section>
 
   <!-- FEATURES -->
+
   <section class="features">
 
-    <h2>Why Choose Us</h2>
+    <h2>Grow Faster With Better Networking</h2>
 
     <p>
-      Professional networking with modern aesthetics and smooth user experience.
+      Modern networking tools, clean profile designs, and professional
+      communication for ambitious people around the world.
     </p>
 
     <div class="feature-grid">
 
       <div class="feature-card">
-        <h3>Professional Profiles</h3>
-        <p>Create visually appealing profiles that stand out.</p>
+
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <h3>Professional Teams</h3>
+
+        <p>
+          Collaborate with highly skilled professionals, startups,
+          recruiters, and global enterprises using a beautifully
+          designed networking platform.
+        </p>
+
       </div>
 
       <div class="feature-card">
-        <h3>Build Network</h3>
-        <p>Connect with recruiters, mentors, and professionals.</p>
+
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <h3>Career Opportunities</h3>
+
+        <p>
+          Discover remote jobs, internships, freelance projects,
+          and international career opportunities tailored to your
+          skills and experience.
+        </p>
+
       </div>
 
       <div class="feature-card">
-        <h3>Career Growth</h3>
-        <p>Discover opportunities and level up your career.</p>
+
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="">
+
+        <h3>Build Your Brand</h3>
+
+        <p>
+          Share achievements, showcase portfolios, publish articles,
+          and create a strong professional identity that attracts
+          recruiters and clients.
+        </p>
+
       </div>
 
     </div>
 
   </section>
 
+  <!-- TESTIMONIALS -->
+
+  <section class="testimonials">
+
+    <h2>Success Stories</h2>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+
+        <div class="testimonial-top">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+          <div>
+            <h4>Emily Watson</h4>
+            <p>Marketing Manager</p>
+          </div>
+        </div>
+
+        <p>
+          “This modern professional platform helped me connect with
+          recruiters and land my dream remote job within just a few months.”
+        </p>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="testimonial-top">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+          <div>
+            <h4>James Peterson</h4>
+            <p>Software Engineer</p>
+          </div>
+        </div>
+
+        <p>
+          “The clean UI, networking tools, and profile features make
+          professional communication smooth and visually appealing.”
+        </p>
+
+      </div>
+
+      <div class="testimonial">
+
+        <div class="testimonial-top">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+          <div>
+            <h4>Sophia Lee</h4>
+            <p>UX Researcher</p>
+          </div>
+        </div>
+
+        <p>
+          “I love the modern aesthetic and engaging layout. It feels
+          premium, minimal, and highly professional.”
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Join The Future Of Networking</h2>
+
+    <p>
+      Connect with professionals, build meaningful relationships,
+      discover global opportunities, and accelerate your career with
+      a visually stunning LinkedIn-inspired homepage.
+    </p>
+
+    <button>Start Networking</button>
+
+  </section>
+
   <!-- FOOTER -->
+
   <footer>
-    © 2026 Professional Network UI. Designed with ❤️
+    © 2026 Professional Networking Platform • Designed with Modern UI Inspiration
   </footer>
 
 </body>
